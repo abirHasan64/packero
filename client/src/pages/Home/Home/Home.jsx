@@ -7,9 +7,13 @@ const Home = () => {
   return (
     <div>
       <Banner />
+
       <HowItWorks />
+
       <Services />
+
       <ClientLogosMarquee />
+      <hr className="mb-20 border-dashed border-green-400" />
     </div>
   );
 };
