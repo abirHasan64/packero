@@ -12,7 +12,7 @@ const HowItWorks = () => {
       data-aos-once="false"
       className="mt-20"
     >
-      <h1 className="text-4xl text-center font-extrabold text-green-900 mb-4">
+      <h1 className="text-4xl text-center font-extrabold text-success mb-4">
         How It Works
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

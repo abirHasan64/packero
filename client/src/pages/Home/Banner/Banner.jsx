@@ -5,7 +5,7 @@ import bannerImg3 from "../../../assets/banner/banner3.png";
 import { Carousel } from "react-responsive-carousel";
 const Banner = () => {
   return (
-    <Carousel className="mt-20"
+    <Carousel className="mt-2"
       showThumbs={false}
       showStatus={false}
       showArrows={false}

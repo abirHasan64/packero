@@ -12,7 +12,7 @@ const logos = [amazon, casio, moonstar, start, randstad];
 
 const ClientLogosMarquee = () => {
   return (
-    <section className="py-10 bg-gray-100 mb-20">
+    <section className="py-10 bg-gray-100 mb-20 rounded-2xl">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-2xl text-success font-bold text-center mb-12">
           Trusted by Leading Brands

@@ -11,6 +11,12 @@ const Navbar = () => {
       <li>
         <NavLink to="/about">About Us</NavLink>
       </li>
+      <li className="md:hidden">
+        <button className="btn btn-success mb-2">Sign In</button>
+      </li>
+      <li className="md:hidden">
+        <button className="btn btn-success btn-dash">Be a rider</button>
+      </li>
     </>
   );
 
@@ -42,10 +48,12 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="ml-8">
+        <div className="mx-4">
           <NavLink className="flex items-center gap-2" to="/">
             <img className="w-8 h-8 rounded-xl" src={logo} alt="Packero" />
-            <span className="text-4xl mb-1 font-bold font-permanent-marker">Packero</span>
+            <span className="text-4xl mb-1 font-bold font-permanent-marker">
+              Packero
+            </span>
           </NavLink>
         </div>
       </div>
@@ -53,9 +61,9 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <div className="mx-4">
-            <button className="btn btn-outline btn-primary mx-4">Sign In</button>
-            <button className="btn btn-success btn-dash">Be a rider</button>
+        <div className="mx-4 hidden md:block">
+          <button className="btn btn-success mx-4">Sign In</button>
+          <button className="btn btn-success btn-dash">Be a rider</button>
         </div>
         <label className="flex cursor-pointer gap-2">
           <svg
