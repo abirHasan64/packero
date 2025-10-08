@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
@@ -12,10 +11,12 @@ const Navbar = () => {
         <NavLink to="/about">About Us</NavLink>
       </li>
       <li className="md:hidden">
-        <button className="btn btn-success mb-2">Sign In</button>
+        <button className="btn btn-success mb-2 font-extrabold">Sign In</button>
       </li>
       <li className="md:hidden">
-        <button className="btn btn-success btn-dash">Be a rider</button>
+        <button className="btn btn-success btn-dash font-extrabold">
+          Be a rider
+        </button>
       </li>
     </>
   );
@@ -23,7 +24,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-lg">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown font-extrabold">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,13 +58,17 @@ const Navbar = () => {
           </NavLink>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navItems}</ul>
+      <div className="navbar-center font-extrabold hidden lg:flex">
+        <ul className="menu menu-horizontal px-1 text-lg">{navItems}</ul>
       </div>
       <div className="navbar-end">
         <div className="mx-4 hidden md:block">
-          <button className="btn btn-success mx-4">Sign In</button>
-          <button className="btn btn-success btn-dash">Be a rider</button>
+          <button className="btn btn-success mx-4 font-extrabold">
+            Sign In
+          </button>
+          <button className="btn btn-success btn-dash font-extrabold">
+            Be a rider
+          </button>
         </div>
         <label className="flex cursor-pointer gap-2">
           <svg

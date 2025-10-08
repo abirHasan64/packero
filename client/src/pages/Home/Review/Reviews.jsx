@@ -16,12 +16,12 @@ const Reviews = () => {
 
   return (
     <div
-      className="relative py-16 px-4 md:px-8 lg:px-12 mt-20"
+      className="relative py-16 px-4 md:px-8 lg:px-12 mt-20 bg-base-200 rounded-xl"
       data-aos="fade-up"
       data-aos-delay="100"
     >
       {/* Section Title */}
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      <h2 className="text-3xl text-success md:text-4xl font-bold text-center mb-12">
         What Our Customers Say
       </h2>
 
@@ -44,7 +44,7 @@ const Reviews = () => {
         pagination={{
           clickable: true,
           bulletClass:
-            "swiper-pagination-bullet bg-gray-300 mx-1 w-3 h-3 rounded-full transition-all duration-300",
+            "swiper-pagination-bullet bg-gray-500 mx-1 w-3 h-3 rounded-full transition-all duration-300",
           bulletActiveClass: "!bg-success scale-110",
         }}
         className="mySwiper !pb-10" // Adds margin below Swiper slides for pagination bullets
