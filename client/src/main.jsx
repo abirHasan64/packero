@@ -5,12 +5,13 @@ import { RouterProvider } from "react-router";
 import { router } from "./router/Router.jsx";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "swiper/css"; // ✅ Swiper global CSS
 
 AOS.init({
-  duration: 3000, // Animation duration (in ms)
-  easing: "ease-in-out", // Smooth easing
-  once: false, // Animate every time you scroll up/down
-  mirror: true, // Don't re-animate when scrolling past back up
+  duration: 1000, // Faster animation (feels snappier)
+  easing: "ease-in-out",
+  once: false,
+  mirror: false,
 });
 
 createRoot(document.getElementById("root")).render(

@@ -4,6 +4,7 @@ import HowItWorks from "../HowItWorks/HowItWorks";
 import ClientLogosMarquee from "../ClientLogosMarquee/ClientLogosMarquee";
 import Benefits from "../Benefits/Benefits";
 import BeMerchant from "../BeMerchant/BeMerchant";
+import Reviews from "../Review/Reviews";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <hr className="mb-20 border-dashed border-green-400" />
       <Benefits />
       <BeMerchant />
+      <Reviews />
     </div>
   );
 };
