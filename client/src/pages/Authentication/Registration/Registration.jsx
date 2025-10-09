@@ -1,8 +1,7 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 
-const Login = () => {
+const Registration = () => {
   const {
     register,
     handleSubmit,
@@ -52,21 +51,18 @@ const Login = () => {
               Password must be at least 6 characters
             </p>
           )}
-          <div className="text-right">
-            <a className="link link-hover">Forgot password?</a>
-            <br />
+          <div>
             <span>
-              Don't Have an Account?{" "}
-              <NavLink className="link link-hover" to="/register">
-                Register Now
-              </NavLink>
+              Already Have an Account? <NavLink className="link link-hover" to="/login">Login Now</NavLink>
             </span>
           </div>
-          <button className="btn btn-neutral mt-4 w-32">Login</button>
+          <button className="btn btn-neutral mt-4 w-64">
+            Create An Account
+          </button>
         </fieldset>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default Registration;

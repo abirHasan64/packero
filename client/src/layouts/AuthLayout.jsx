@@ -5,7 +5,7 @@ import Footer from "../pages/shared/Footer";
 
 const AuthLayout = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen m-8">
       {/* Logo */}
       <div className="bg-base-200 p-8 rounded-lg shadow-lg w-full">
         <div className="mb-8">
