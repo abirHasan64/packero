@@ -1,7 +1,20 @@
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navbar = () => {
+  // Get the saved theme or default to light
+  const [isDark, setIsDark] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
+  // Apply theme whenever it changes
+  useEffect(() => {
+    const theme = isDark ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [isDark]);
+
   const navItems = (
     <>
       <li>
@@ -11,7 +24,11 @@ const Navbar = () => {
         <NavLink to="/about">About Us</NavLink>
       </li>
       <li className="md:hidden">
-        <button className="btn btn-success mb-2 font-extrabold">Sign In</button>
+        <NavLink to="/login">
+          <button className="btn btn-success mb-2 font-extrabold">
+            Sign In
+          </button>
+        </NavLink>
       </li>
       <li className="md:hidden">
         <button className="btn btn-success btn-dash font-extrabold">
@@ -58,18 +75,24 @@ const Navbar = () => {
           </NavLink>
         </div>
       </div>
+
       <div className="navbar-center font-extrabold hidden lg:flex">
         <ul className="menu menu-horizontal px-1 text-lg">{navItems}</ul>
       </div>
+
       <div className="navbar-end">
-        <div className="mx-4 hidden md:block">
-          <button className="btn btn-success mx-4 font-extrabold">
-            Sign In
-          </button>
+        <div className="hidden mx-4 md:block">
+          <NavLink className="mx-4" to="/login">
+            <button className="btn btn-success mb-2 font-extrabold">
+              Sign In
+            </button>
+          </NavLink>
           <button className="btn btn-success btn-dash font-extrabold">
             Be a rider
           </button>
         </div>
+
+        {/* 🌙 Theme toggle */}
         <label className="flex cursor-pointer gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,11 +108,14 @@ const Navbar = () => {
             <circle cx="12" cy="12" r="5" />
             <path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
           </svg>
+
           <input
             type="checkbox"
-            value="dark"
+            checked={isDark}
+            onChange={() => setIsDark(!isDark)}
             className="toggle theme-controller"
           />
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"

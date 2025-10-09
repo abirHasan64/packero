@@ -14,6 +14,8 @@ AOS.init({
   mirror: false,
 });
 
+const savedTheme = localStorage.getItem("theme") || "light";
+document.documentElement.setAttribute("data-theme", savedTheme);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <div className="font-urbanist max-w-7xl mx-auto">
