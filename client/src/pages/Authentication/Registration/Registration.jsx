@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Registration = () => {
   const {
@@ -8,8 +9,15 @@ const Registration = () => {
     formState: { errors },
   } = useForm();
 
+  const { createUser } = useAuth();
+
   const onSubmit = (data) => {
     console.log(data);
+    createUser(data.email, data.password)
+      .then((result) => console.log(result))
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div>
@@ -53,7 +61,10 @@ const Registration = () => {
           )}
           <div>
             <span>
-              Already Have an Account? <NavLink className="link link-hover" to="/login">Login Now</NavLink>
+              Already Have an Account?{" "}
+              <NavLink className="link link-hover" to="/login">
+                Login Now
+              </NavLink>
             </span>
           </div>
           <button className="btn btn-neutral mt-4 w-64">
