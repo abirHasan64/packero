@@ -21,8 +21,12 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
+        <NavLink to="/coverage">Coverage</NavLink>
+      </li>
+      <li>
         <NavLink to="/about">About Us</NavLink>
       </li>
+
       <li className="md:hidden">
         <NavLink to="/login">
           <button className="btn btn-success mb-2 font-extrabold">

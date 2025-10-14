@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
   const {
@@ -14,6 +15,7 @@ const Login = () => {
   };
   return (
     <div>
+      <h1 className="text-5xl font-bold">Welcome Back</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset className="fieldset">
           <label className="label">Email</label>
@@ -27,8 +29,8 @@ const Login = () => {
           />
           {/* Email required error check */}
           {errors.email?.type === "required" && (
-            <p className="text-white bg-error p-2 rounded-xl" role="alert">
-              Email is required
+            <p className="text-red-500 text-sm mt-2 font-medium animate-pulse" role="alert">
+              Please enter your email address.
             </p>
           )}
           <label className="label">Password</label>
@@ -42,14 +44,14 @@ const Login = () => {
           />
           {/* Password required error check */}
           {errors.password?.type === "required" && (
-            <p className="text-white bg-error p-2 rounded-xl" role="alert">
-              Password is required
+            <p className="text-red-500 text-sm mt-2 font-medium animate-pulse" role="alert">
+              Please enter your password.
             </p>
           )}
           {/*Password Min length error check */}
           {errors.password?.type === "minLength" && (
-            <p className="text-white bg-error p-2 rounded-xl" role="alert">
-              Password must be at least 6 characters
+            <p className="text-red-500 text-sm mt-2 font-medium animate-pulse" role="alert">
+              Password must be at least 6 characters long.
             </p>
           )}
           <div className="text-right">
@@ -57,14 +59,17 @@ const Login = () => {
             <br />
             <span>
               Don't Have an Account?{" "}
-              <NavLink className="link link-hover" to="/register">
+              <NavLink className="link link-hover btn btn-link" to="/register">
                 Register Now
               </NavLink>
             </span>
           </div>
-          <button className="btn btn-neutral mt-4 w-32">Login</button>
+          <div className="text-center">
+            <button className="btn btn-neutral mt-4 w-42">Login</button>
+          </div>
         </fieldset>
       </form>
+      <SocialLogin />
     </div>
   );
 };
